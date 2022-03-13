@@ -175,6 +175,9 @@
 /(vendor|system/vendor)/bin/init\.insmod\.sh           	u:object_r:vendor_insmod_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.tlc\.knoxai@1\.0-service                      u:object_r:hal_knoxai_default_exec:s0
 /(vendor|system/vendor)/bin/hw/gps\.sh          u:object_r:gpsd_exec:s0
+/(vendor|system/vendor)/bin/init\.vendor\.sensordebug\.sh                     u:object_r:vendor_sensordebug_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.security\.skpm@1\.0-service    u:object_r:hal_skpm_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.security\.sem@1\.0-service    u:object_r:hal_sem_default_exec:s0
 /(vendor|system/vendor)/bin/bcc                                   u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.digitaltv\.fullseg@1\.0-service	   u:object_r:digital_tv_fullseg_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.dtvtuner@1\.0-service	               u:object_r:digital_tv_fullseg_exec:s0
@@ -305,6 +308,10 @@
 /data/snap(/.*)?             u:object_r:snap_data_file:s0
 /dev/stune(/.*)?               u:object_r:cgroup:s0
 /data/zram(/.*)?                                 u:object_r:zram_data_file:s0
+/dev/rmnet[0-7]*	u:object_r:rm_net_device:s0
+/dev/msctr[0-9]                        u:object_r:msctr_device:s0
+/dev/msctr[0-9][0-9]                   u:object_r:msctr_device:s0
+/dev/usnet[0-7]*							u:object_r:us_net_device:s0
 /dev/ttyGS[0-3]*               u:object_r:serial_device:s0
 /dev/hidraw[0-9]*	u:object_r:ovr_device:s0
 /dev/dbmdx-[0-9]*	u:object_r:audio_device:s0
@@ -472,6 +479,7 @@
 /data/localtm(/.*)?                               u:object_r:localtm_data_file:s0
 /data/keyfota(/.*)?                                      u:object_r:keyfota_data_file:s0
 /efs/pdp_bkup(/.*)?	u:object_r:pdp_efs_file:s0
+/dev/tsp_data[0-9]                        u:object_r:tsp_data_device:s0
 /dev/msm_vidc_.*	u:object_r:audio_device:s0
 /data/firmware(/.*)?		u:object_r:mediaserver_data_file:s0
 /data/overlays(/.*)?                                  u:object_r:themecenter_data_file:s0
@@ -670,6 +678,7 @@
 /data/clipboard/knox(/.*)?  u:object_r:knox_clipboard_file:s0
 /data/misc/pageboost(/.*)?    	  u:object_r:pageboostd_data_file:s0
 /data/vendor/yas_lib(/.*)?               u:object_r:yas_lib_vendor_data_file:s0
+/mnt/vendor/efs/taas(/.*)?					u:object_r:taas_efs_file:s0
 /vendor/etc/eden/gpu(/.*)?                     u:object_r:vendor_eden_gpu_vendor_file:s0
 /vendor/bin/moredump.bin	u:object_r:wlbtd_exec:s0
 /vendor/firmware/NPU.bin       u:object_r:vendor_npu_firmware_file:s0
@@ -911,6 +920,7 @@
 /dev/mafpc                u:object_r:mafpc_device:s0
 /dev/sr100                                  u:object_r:uwb_sr_device:s0
 /dev/mcfrc              u:object_r:mcfrc_device:s0
+/dev/tspio                                 u:object_r:tspio_device:s0
 /dev/mali0                     u:object_r:gpu_device:s0
 /dev/hdcp2                     u:object_r:vendor_hdcp_device:s0
 /dev/vfsspi	u:object_r:fp_sensor_device:s0
@@ -1030,6 +1040,7 @@
 /publiccert\.pem            u:object_r:rootfs:s0
 /system/bin/icd                 u:object_r:icdaemon_exec:s0
 /system/bin/iof                 u:object_r:iofdaemon_exec:s0
+/dpolicy_system								u:object_r:rootfs:s0
 /dev/felica_cen				u:object_r:nfcfelica_device:s0
 /dev/felica_pon				u:object_r:felica_device:s0
 /dev/felica_rfs				u:object_r:felica_device:s0
@@ -1195,7 +1206,6 @@
 /system/bin/otp_server	u:object_r:otp_server_exec:s0
 /system/python/bin/run   u:object_r:python_exec:s0
 /system/bin/apexserver   u:object_r:apexserver_exec:s0
-/system/bin/apaservice		u:object_r:apaservice_exec:s0
 /system/bin/apk_signer                                                       u:object_r:apk_signer_exec:s0
 /data/\.frameburst\.info                              u:object_r:sec_wifi_data_file:s0
 /dev/socket/sme_socket                           u:object_r:sme_socket:s0
@@ -1230,7 +1240,6 @@
 /dev/ssp_data_injection	u:object_r:ssp_device:s0
 /sys/class/usb/otg/test                               u:object_r:sysfs_ss_writable:s0
 /system/bin/bootchecker		u:object_r:bootchecker_exec:s0
-/system/bin/jackservice		u:object_r:jackservice_exec:s0
 /system/bin/OneSegGinga	u:object_r:oneseg_mw_exec:s0
 /sys/block/mmcblk0/size		                         u:object_r:sysfs_ss_writable:s0
 /system/bin/defrag_f2fs							u:object_r:e4defrag_exec:s0
@@ -1257,6 +1266,7 @@
 /system/bin/knox_changer            u:object_r:kapd_exec:s0
 /vendor/bin/fsdbg_vendor            u:object_r:fsdbg_vendor_exec:s0
 /dev/shub_data_injection                u:object_r:shub_device:s0
+/system/bin/spqr_service					u:object_r:spqr_service_daemon_exec:s0
 /dev/snfc_available_poll	u:object_r:nfc_device:s0
 /sys/devices/soc0/soc_id      u:object_r:sysfs_socinfo:s0
 /system/bin/rsudrkproxyd			u:object_r:rsudrkproxyd_exec:s0
@@ -1343,6 +1353,7 @@
 /sys/class/misc/multipdp/waketime                         u:object_r:sysfs_ss_writable:s0
 /sys/class/mstldo/mst_drv/support           u:object_r:sysfs_mst_writable:s0
 /system/bin/move_widevine_data\.sh             u:object_r:move_widevine_data_exec:s0
+/vendor/bin/wifi_firmware_handler            u:object_r:external_firmware_handler_exec:s0
 /sys/kernel/ems/emstune/aio_tuner		u:object_r:ems_file:s0
 /sys/devices/bluetooth/fm_dtv_ctrl             u:object_r:sysfs_bluetooth_writable:s0
 /sys/class/mst/mst_ftmdrv/transmit         u:object_r:sysfs_mst_writable:s0

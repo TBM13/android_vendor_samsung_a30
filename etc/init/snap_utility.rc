@@ -24,7 +24,8 @@ on property:sys.boot_completed=1
 
 on property:sys.boot_completed=1 && property:ro.product.build.type=user && property:ro.boot.debug_level=0x4f4c
     setprop log.tag.snap_api::snpe WARN
-    setprop log.tag.snap_api::V3 WARN
+    setprop log.tag.snap_api::V3 INFO
+	setprop log.tag.snap_api::V2 INFO
     setprop log.tag.snap_compute::V3 WARN
     setprop log.tag.snap_compute::V2 WARN
     setprop log.tag.snaplite_lib WARN
@@ -35,7 +36,8 @@ on property:sys.boot_completed=1 && property:ro.product.build.type=user && prope
 	
 on property:sys.boot_completed=1 && property:ro.product.build.type=userdebug && property:ro.boot.debug_level=0x4f4c
     setprop log.tag.snap_api::snpe WARN
-    setprop log.tag.snap_api::V3 WARN
+    setprop log.tag.snap_api::V3 INFO
+	setprop log.tag.snap_api::V2 INFO
     setprop log.tag.snap_compute::V3 WARN
     setprop log.tag.snap_compute::V2 WARN
     setprop log.tag.snaplite_lib WARN

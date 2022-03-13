@@ -70,6 +70,8 @@ vendor.samsung.hardware.tlc.snap::ISehSnapSec                           u:object
 vendor.samsung.hardware.tlc.snap@1.0::ISehSnapSec                       u:object_r:hal_snapsec_hwservice:s0
 vendor.samsung.hardware.tlc.knoxai::ISehKnoxAi                               u:object_r:hal_knoxai_hwservice:s0
 vendor.samsung.hardware.tlc.mpos_tui::ISehmpostui                            u:object_r:hal_mpostui_hwservice:s0
+vendor.samsung.hardware.security.skpm::ISehSkpm			       	u:object_r:hal_skpm_hwservice:s0
+vendor.samsung.hardware.security.sem::ISehSem			       	u:object_r:hal_sem_hwservice:s0
 vendor.samsung.hardware.digitaltv.fullseg::IFullseg      u:object_r:digitaltv_fullseg_hwservice:s0
 vendor.samsung.hardware.dtvtuner::IDtvTuner               u:object_r:digitaltv_fullseg_hwservice:s0
 vendor.samsung_slsi.hardware.radio::IOemSamsungslsi                   u:object_r:hal_telephony_hwservice:s0

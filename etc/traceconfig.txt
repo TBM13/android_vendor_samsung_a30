@@ -32,6 +32,7 @@ data_sources {
             atrace_categories: "sched"
             atrace_categories: "wm"
             atrace_categories: "gfx"
+            atrace_categories: "disk"			
             atrace_apps: "*"
             compact_sched {
                 enabled: true
